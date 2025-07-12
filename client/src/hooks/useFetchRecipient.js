@@ -7,6 +7,8 @@ export const useFetchRecipientUser = (chat, user) =>{
 
     const recipientId = chat?.members.find((id) => id !== user?._id)
 
+    
+
     useEffect(() => {
         const getUser = async() => {
             if(!recipientId) return null
@@ -21,7 +23,7 @@ export const useFetchRecipientUser = (chat, user) =>{
         }
 
         getUser()
-    }, [])
+    }, [recipientId])
 
     return {recipientUser}
 }
